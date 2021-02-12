@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/120" height="120" width="120" />
+  <img src="./docs/artwork.png" height=" 118" width="518" />
   <h1>fastify-nextjs-project</h1>
   <h4 align="center">🐅 Project template to build a Fastify + NextJS application</h4>
 </div>

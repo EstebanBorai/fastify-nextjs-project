@@ -6,12 +6,12 @@
   "author": "Esteban Borai <estebanborai@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "next build",
+    "build": "tsc --outDir dist/ --esModuleInterop main.ts && next build",
     "dev": "ts-node main.ts",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "fmt": "eslint . --ext .js,.jsx,.ts,.tsx --fix && prettier --write \"**/*.{json,md,yml}\"",
     "prettier": "prettier -c \"**/*.{md,json,yml,sh}\"",
-    "start": "next start"
+    "start": "node dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",
