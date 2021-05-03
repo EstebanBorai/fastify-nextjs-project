@@ -12,10 +12,16 @@ export default fp(
     next: (err?: Error) => void,
   ): Promise<void> => {
     const dev = process.env.NODE_ENV !== 'production';
-    const app = Next({ dev });
+    const app = Next({
+      dev,
+      dir: './src/client',
+    });
     const handle = app.getRequestHandler();
 
-    await app.prepare();
+    // Don't await on "prepare" as this takes longer
+    // than th AVVIO_PLUGIN_TIMEOUT thus causing:
+    // Error: ERR_AVVIO_PLUGIN_TIMEOUT: plugin did not start in time
+    app.prepare();
 
     if (dev) {
       fastify.get('/_next/*', (req, reply) => {

@@ -6,12 +6,15 @@
   "author": "Esteban Borai <estebanborai@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --outDir dist/ --esModuleInterop main.ts && next build",
-    "dev": "ts-node main.ts",
+    "build": "NEXT_TELEMETRY_DISABLED=1 yarn build:client && yarn build:server",
+    "build:production": "yarn run build && ./bin/prepare_prod",
+    "build:client": "NEXT_TELEMETRY_DISABLED=1 next build ./src/client",
+    "build:server": "tsc",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 ts-node src/main.ts",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "fmt": "eslint . --ext .js,.jsx,.ts,.tsx --fix && prettier --write \"**/*.{json,md,yml}\"",
+    "fmt": "eslint . --ext .js,.jsx,.ts,.tsx --fix && prettier --write \"**/*.{json,md,yml,ts,tsx,js,jsx}\"",
     "prettier": "prettier -c \"**/*.{md,json,yml,sh}\"",
-    "start": "node dist/main.js"
+    "start": "NEXT_TELEMETRY_DISABLED=1 node ./dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^14.14.25",
@@ -24,14 +27,14 @@
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
-    "fastify": "^3.11.0",
+    "fastify": "^3.15.1",
     "fastify-plugin": "^3.0.0",
-    "next": "^10.0.6",
+    "next": "^10.2.0",
+    "pino-pretty": "^4.7.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sass": "^1.32.6"
+    "react-dom": "^17.0.1"
   }
 }

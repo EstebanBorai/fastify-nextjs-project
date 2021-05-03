@@ -14,7 +14,8 @@ export default function (
   fastify.get('/', (request: FastifyRequest, reply: FastifyReply) => {
     reply.send({
       message: 'This is an API Route!',
-      hint: 'Every request to api/v1 will be handled by Fastify without using the NextJS plugin',
+      hint:
+        'Every request to api/v1 will be handled by Fastify without using the NextJS plugin',
     });
   });
 

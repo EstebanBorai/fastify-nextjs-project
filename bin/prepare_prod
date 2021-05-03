@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BUILD_DIRECTORY=./dist
+NEXT_BUNDLE_DIR="$BUILD_DIRECTORY/.next"
+
+echo "Copying NextJS build to \"$NEXT_BUNDLE_DIR\""
+mkdir $NEXT_BUNDLE_DIR
+cp -R ./src/client/.next/** $NEXT_BUNDLE_DIR
+
+echo "Finished, build files are available on: \"$BUILD_DIRECTORY\""
+
+exit 0
