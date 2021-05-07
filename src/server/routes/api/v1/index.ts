@@ -11,7 +11,7 @@ export default function (
   _: FastifyRegisterOptions<unknown>,
   done: (err?: FastifyError) => void,
 ): void {
-  fastify.get('/', (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.get('/', (_: FastifyRequest, reply: FastifyReply) => {
     reply.send({
       message: 'This is an API Route!',
       hint:

@@ -10,7 +10,7 @@
     "build:production": "yarn run build && ./bin/prepare_prod",
     "build:client": "NEXT_TELEMETRY_DISABLED=1 next build ./src/client",
     "build:server": "tsc",
-    "dev": "NEXT_TELEMETRY_DISABLED=1 ts-node src/main.ts",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 ts-node-dev --ignore-watch ./src/client --transpile-only ./src/main.ts",
     "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "fmt": "eslint . --ext .js,.jsx,.ts,.tsx --fix && prettier --write \"**/*.{json,md,yml,ts,tsx,js,jsx}\"",
     "prettier": "prettier -c \"**/*.{md,json,yml,sh}\"",
@@ -27,6 +27,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.4"
   },
   "dependencies": {
