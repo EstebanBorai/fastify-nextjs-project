@@ -1,7 +1,9 @@
-import fastify, { FastifyInstance } from 'fastify';
+import fastify from 'fastify';
 
 import nextPlugin from './plugins/next';
 import routes from './routes';
+
+import { FastifyInstance } from 'fastify';
 
 export default async (): Promise<FastifyInstance> => {
   const server = fastify({
