@@ -16,24 +16,24 @@
     "prettier": "prettier -c \"**/*.{md,json,yml,sh}\"",
     "start": "NEXT_TELEMETRY_DISABLED=1 node ./dist/main.js"
   },
-  "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
-    "eslint": "^8.2.0",
-    "prettier": "^2.4.1",
-    "ts-node": "^10.4.0",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.4.4"
-  },
   "dependencies": {
-    "fastify": "^3.23.1",
+    "fastify": "^3.25.3",
     "fastify-plugin": "^3.0.0",
-    "next": "^12.0.3",
-    "pino-pretty": "^7.2.0",
+    "next": "^12.0.7",
+    "pino-pretty": "^7.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.5",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
   }
 }
